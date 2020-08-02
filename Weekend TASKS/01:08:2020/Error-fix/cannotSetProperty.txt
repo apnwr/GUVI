@@ -1,0 +1,14 @@
+*Uncaught TypeError: Cannot set property
+
+When we try to access an undefined variable it always returns undefined and we cannot get 
+or set any property of undefined. In that case, an application will throw “Uncaught TypeError 
+cannot set property of undefined.”
+
+var test = undefined;
+test.value = 0;
+
+output:
+Uncaught TypeError: Cannot set property 'value' of undefined
+
+If the test object does not exist, error will throw “Uncaught TypeError cannot set property of 
+undefined.”

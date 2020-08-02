@@ -1,0 +1,28 @@
+*TypeError: null is not an object (evaluating
+
+This is an error that occurs in Safari when you read a property or call a method on a 
+null object. You can test this very easily in the Safari Developer Console.
+
+
+var testArray = null;
+if(testArray.length === 0){
+    console.log("Array is empty");
+}
+
+output:
+"null is not an object (evaluating 'testArray.length')"
+
+
+Interestingly, in JavaScript, null and undefined are not the same, 
+which is why we see two different error messages. Undefined is usually a variable 
+that has not been assigned, while null means the value is blank.
+
+One way this error might occur in a real world example is if you try using a DOM element 
+in your JavaScript before the element is loaded. That’s because the DOM API returns null for 
+object references that are blank.
+
+Any JS code that executes and deals with DOM elements should execute after the DOM elements 
+have been created. JS code is interpreted from top to down as laid out in the HTML. So, if 
+there is a tag before the DOM elements, the JS code within script tag will execute as the browser 
+parses the HTML page. You will get this error if the DOM elements have not been created before 
+loading the script.

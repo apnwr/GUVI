@@ -1,0 +1,23 @@
+*ReferenceError: event is not defined
+
+This error is thrown when you try to access a variable that is undefined or 
+is outside the current scope. You can test it very easily in Chrome browser.
+
+function testFun(){
+    var foo;
+}
+console.log(foo);
+
+output:
+Uncaught ReferenceError: foo is not defined
+
+
+If you’re getting this error when using the event handling system, make sure you use the event 
+object passed in as a parameter. Older browsers like IE offer a global variable event, and Chrome 
+automatically attaches the event variable to the handler. Firefox will not automatically add it. 
+Libraries like jQuery attempt to normalize this behavior. Nevertheless, it’s best practice to use 
+the one passed into your event handler function.
+
+document.addEventListener("mousemove", function (event) {
+  console.log(event);
+})

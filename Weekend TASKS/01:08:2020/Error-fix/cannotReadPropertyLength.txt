@@ -1,0 +1,57 @@
+*TypeError: Cannot read property 'length'
+
+This is an error that occurs in Chrome because of reading length property for an 
+undefined variable. You can test this in the Chrome Developer Console.
+
+var mybutton = undefined;
+mybutton.length;
+
+output:
+Uncaught TypeError: Cannot read property 'length' of undefined
+
+You normally find length defined on an array, but you might run into this error if 
+the array is not initialized or if the variable name is hidden in another context. 
+Let’s understand this error with the following example.
+
+var testArray= ["Test"];
+
+function testFunction(testArray) {
+    for (var i = 0; i < testArray.length; i++) {
+      console.log(testArray[i]);
+    }
+}
+
+testFunction();
+
+When you declare a function with parameters, these parameters become local ones. 
+This means that even if you have variables with names testArray, parameters with the 
+same names within a function will still be treated as local.
+
+You have two ways to resolve your issue:
+
+1.Remove parameters in the function declaration statement (it turns out you want to access 
+those variables that are declared outside of the function, so you don’t need parameters 
+for your function):
+
+var testArray = ["Test"];
+
+/* Precondition: defined testArray outside of a function */
+function testFunction(/* No params */) {
+   for (var i = 0; i < testArray.length; i++) {
+     console.log(testArray[i]);
+   }
+}
+
+testFunction();
+
+2.Invoke the function passing it the array that we declared:
+
+var testArray = ["Test"];
+
+function testFunction(testArray) {
+  for (var i = 0; i < testArray.length; i++) {
+     console.log(testArray[i]);
+   }
+}
+
+testFunction(testArray);
