@@ -1,6 +1,0 @@
-*TypeError: undefined is not an object (evaluating
-
-This is an error that occurs in Safari when you read a property or call 
-a method on an undefined object. You can test this very easily in the Safari Developer 
-Console. This is essentially the same as the "Uncaught TypeError: Cannot read property of undefined" error for Chrome, but Safari uses a 
-different error message.
