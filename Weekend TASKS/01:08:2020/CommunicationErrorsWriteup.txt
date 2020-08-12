@@ -1,0 +1,194 @@
+////////////////////////Communication Errors/////////////////////////
+
+*Invalid URL/post data
+*Server Response status
+*No network connection
+*Server response content 
+
+-----------------------------------------------INVALID URL/POST DATA
+-> Typically long string concatenation
+-> Don't forget to use 
+   encodeURIComponent() on each part
+   -Not encode URI
+-> Make sure parameters are named corretly
+
+
+#encodeURIComponent()
+The encodeURIComponent() function encodes a URI component.
+This function encodes special characters. 
+In addition, it encodes the following characters: , / ? : @ & = + $ #
+
+Tip: Use the decodeURIComponent() function to decode an encoded URI component.
+
+
+-----------------------------------------------SERVER RESPONSE STATUS
+->200 is not the only valid status that may be returned
+  Beware of 304
+->Any other status means you didn't get data 
+
+The HTTP 304 Not Modified client redirection response code indicates that 
+there is no need to retransmit the requested resources. It is an implicit 
+redirection to a cached resource. This happens when the request method is 
+safe, like a GET or a HEAD request, or when the request is conditional and uses a 
+If-None-Match or a If-Modified-Since header.
+The equivalent 200 OK response would have included the headers Cache-Control,
+ Content-Location, Date, ETag, Expires, and Vary.
+Many developer tools' network panels of browsers create extraneous 
+requests leading to 304 responses, so that access to the local cache 
+is visible to developers.
+
+
+Server Response Status -
+
+var xhr = new XMLHttpRequest();
+xhr.open("get", "index.html", true);
+
+xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4) {
+        if(xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+            //handle response
+        } else {
+            //handle error
+        }
+    }
+}
+xhr.send(null);
+
+
+-----------------------------------------------NO NETWORK CONNECTION 
+->Internet Explorer throws an error when calling open() but then goes 
+through normal lifecycle.
+->Firefox fails silently but throws an error if you try to access any 
+response property(status, statusText, responseText) 
+
+var xhr = new XMLHttpRequest();
+
+try{
+    xhr.open("get", "index.html", true);
+} catch(ex){}
+
+xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4){
+        try{
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                //handle response
+            } else {
+                //handle error
+            }
+        } catch(ex){
+            //handle error
+        }
+    }
+};
+
+xhr.send(null);
+
+
+-------------------------------------------SERVER RESPONSE CONTENT
+->A status of 200/304 is not enough
+->Server errors often return html
+->If possible, set status to 500
+
+
+
+-----------------------------------------------RULE--------
+-> throw you own errors
+
+function sortArray(values){
+    if(values instanceof Array){
+        values.sort(function(a,b){
+            return b-a;
+        })
+    }else{
+        throw new Error("sortArray(): Invalid arg.");
+    }
+}
+
+
+
+---------------------------------Throw or Try-Catch------------------
+->Errors should be thrown in the low level parts of the application.
+   -utilities, core libraries, etc.
+->Use try-catch blocks in higher level parts
+   -Application-specific
+   -Client-side business logic
+
+
+-----------------------------------Distinguish fatal versus non-fatal
+//NON FATAL ERRORS
+->Won't interfere with user's main tasks
+->Affects only portion of the page
+  -Easily disabled/ignored
+->Recovery is possible
+->A repeat of the action may result in the appropriate result.
+->Don't tell the user it isn't working unless absolutely necessary.
+
+
+//FATAL ERRORS
+->The application absolutely cannot continue.
+->Significantly interferes with user's ability to be productive
+->Other errors will occur if the application continues
+->Message the user immediately
+->Reload
+
+
+//FATAL OR NON FATAl?
+->Don't allow your code to determine what is & is not fatal
+   -Watch out for loops.
+->The user's experience comes first.
+
+for(var i=0; i<mods.length; i++){
+    mods[i].init();
+}            
+
+
+for(var i=0; i<mods.length; i++){
+    try{
+        mods[i].init();
+    }catch (ex){
+        log(2, "Module " + i + " failed.");
+    }
+}
+
+
+
+------------------------------RULE:PROVIDE A DEBUG MODE--------------
+->Assign a variable that is globally available.
+->try-catch should rethrow the error
+->window.on error should return false
+->Allow the browser to handle the error
+
+
+for(var i=0; i<mods.length; i++){
+    try {
+        mods[i].init();
+    } catch (ex){
+       if(debugMode){
+           throw ex;
+       } else {
+           log(2, "Module " + i + " failed.");
+       }
+    }
+}
+
+
+window.onerror = function(msg, url, line){
+ if(debugMode){
+     return false;
+ } else {
+     log(1, msg);
+     return true;
+ }
+};
+
+
+------------------MAIN RULES SUMMARY----------------------------------
+1. Assume your code will fail.
+2. Log errors to the Server.
+3. You not the browser, handle errors.
+4. Identify where errors might occur.
+5. Throw your own errors.
+6. Distinguish fatal versus non-fatal.
+7. Provide a debug mode.
+
+
