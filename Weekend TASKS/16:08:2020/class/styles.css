@@ -1,0 +1,23 @@
+.round{
+    border-radius: 20%;
+    border: 2px dashed;
+    text-align: center;
+    
+}
+img {
+    filter: grayscale(100%);
+    display: block;
+    margin: auto;
+   
+   
+}
+.scr {
+    overflow-y: hidden; 
+    overflow-x: scroll;
+    white-space: nowrap;
+    height: 140px;
+    width: 160px;
+    max-width: 50%;
+    border: 2px solid red;
+    
+}

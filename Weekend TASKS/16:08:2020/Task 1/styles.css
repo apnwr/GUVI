@@ -1,0 +1,112 @@
+html{
+    border: solid;
+    margin: 0.5%;
+}
+.headi{
+    position: sticky;
+}
+
+
+body{
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 2px solid;
+}
+.upper{
+    padding-top: 40px;
+    background-color: grey;
+ 
+    
+}
+.pic{
+    
+    border: 5px dotted;
+    border-color: yellow;
+    border-radius: 100%;
+    width: 10rem; 
+    height: 10rem;
+    align-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    
+}
+.head{
+    background-color: yellow;
+    padding: 15px;
+    margin: 0 410px;
+    font-size: 50px;
+    border-radius: 15px ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    
+    
+}
+.mid{
+    height: 50px;
+    background-color: whitesmoke;
+}
+
+.low{
+    height: 30px;
+    background-color: grey;
+}
+.ad{
+    text-align: center;
+}
+.cont-head{
+    color: grey;
+    font-size: 120%;
+    margin-left: 15px;
+    padding-bottom: 20%;
+}
+.profile{
+  padding-left: 2%;
+}
+.content{
+ 
+}
+.skills{
+  padding-left: 2%;
+}
+.WorkEx{
+    padding-left: 2%;
+}
+.left{
+    float: left;
+    width: 50%;
+    padding-top: 5%;
+    
+     
+}
+.center-head{
+    margin-left: 10%;
+}
+.range-all{
+    margin-right: 0;
+}
+.worke-head{
+    display: inline;
+   
+}
+#vertLine{
+    width: 0px;
+    border: 1px solid #2A437F;
+    height: 800px;
+    position: absolute;
+    /* I manually centered this since margin auto doesn't automatically place it */
+    left: 708px;
+}
+.right {
+    float: right;
+    width: 50%;
+    padding-top: 5%;
+
+    
+}
+.Edu{
+        padding-left: 2%;
+    }
+
+

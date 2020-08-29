@@ -1,0 +1,292 @@
+
+.parent{
+    background-color: darkslategrey;
+    height: 780vh;
+    text-align: center;   
+    /* position: relative; */
+    /* align-self: center; */
+    /* left: 500px; */
+  
+}
+.start{
+    position: relative;
+ right: 500px;
+ margin-bottom: 20px;
+}
+
+.one1 {
+    /* max-width: 50%; */
+    background-color: orange;
+    float: left;
+    padding: 15px;
+    height: 22em;
+    width: 300px;
+
+
+}
+
+.one11 {
+    /* max-width: 50%; */
+    background-color:skyblue;
+    float: left;
+    padding: 15px;
+    background-color: skyblue;
+    height: 22em;
+    width: 300px;
+
+
+
+}
+
+
+  
+.child1 {
+border: 2px solid white;
+border-radius: 50%;
+padding: 1%;
+margin-top: 0.3%
+}
+#chld{
+    left: 269px;
+    display: block;
+    position: absolute;
+    display: inline;
+    font-weight: bold;
+    color: red;
+    margin-right: 10%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#stats{
+    color: white;
+}
+#obes{
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+
+
+.onebold{
+    font-size: 20px;
+}
+.onebolder{
+    font-size: 35px;
+}
+#child2{
+    color: red;
+}
+.one1p{
+    color: white;
+    
+}
+.fas{
+    color: black;
+}
+.next{
+    background-color: tomato;
+    width: 603px;
+    margin-top: 386px;
+    padding: 15px;
+    position: absolute;
+    height: 250px;
+}
+.nextA {
+    background-color: skyblue;
+    width: 603px;
+    margin-top: 486px;
+    padding: 15px;
+    position: absolute;
+    height: 250px;
+}
+.next1{
+    position: relative;
+    top: 400px;
+    right: 892px;
+    color: white;
+    font-size: 20px;
+}
+.next2{
+    text-align: right;
+    color: white;
+    margin-top: 34px;
+}
+.next3 {
+   text-align: initial;
+   color: white;
+   margin-top: 34px;
+   position: relative;
+   top: 403px;
+   right: 590px;
+   /* right: 539px; */
+   /* width: 561px; */
+   
+}
+.nextA0 {
+    text-align: left;
+    color: white;
+    position: relative;
+    font-size: 20px;
+    
+}
+.nextA1{
+    text-align: left;
+    color: white;
+    margin-top: 34px;
+    position: relative;
+    top: 503px;
+    right: 590px;
+    float: left;
+}
+
+.nextA2 {
+    text-align: left;
+    color: white;
+    margin-top: 34px;
+    position: relative;
+    top: 503px;
+    right: 850px;
+    float: right;
+}
+
+.nextone1 {
+    /* max-width: 50%; */
+    background-color:orange;
+    float: left;
+    padding: 15px;
+    height: 22em;
+    width: 300px;
+    margin-top: 214px;
+    position: relative;
+    right: 599px;
+    top: 364px;
+
+
+}
+
+.nextone11 {
+    /* max-width: 50%; */
+    background-color: tomato;
+    float: left;
+    padding: 15px;
+    height: 22em;
+    width: 300px;
+     margin-top: 34px;
+
+
+
+}
+.nextB {
+    background-color: skyblue;
+    width: 603px;
+    margin-top: 486px;
+    padding: 15px;
+    position: relative;
+    height: 200px;
+    right: 2px;
+    top: 714px;
+}
+.nextB0 {
+    text-align: left;
+    color: white;
+    position: relative;
+    font-size: 30px;
+    right: 285px;
+    top: -250px;
+
+}
+.nextB1 {
+    text-align: left;
+    color: white;
+    margin-top: 34px;
+    position: relative;
+    top: 608px;
+    right: 1180px;
+    /* float: left; */
+}
+.nextB2 {
+    text-align: right;
+    
+    margin-top: 34px;
+    position: relative;
+    top: 425px;
+    right: 837px;
+    /* float: left; */
+}
+#remote{
+    position: relative;
+    right: 156px;
+    top: 56px;
+    width: 4%;
+}
+.nextC {
+    background-color: orange;
+    width: 603px;
+    margin-top: 486px;
+    padding: 15px;
+    position: relative;
+    height: 200px;
+    right: 2px;
+    top: 75px;
+}
+
+.nextC0 {
+    text-align: left;
+    color: white;
+    position: relative;
+    font-size: 30px;
+    right: -1px;
+    top: 0px;
+
+}
+
+.nextC1 {
+    text-align: left;
+    color: white;
+    margin-top: 34px;
+    position: relative;
+    top: -38px;
+    right: -15px;
+    /* float: left; */
+}
+
+.nextC2 {
+    text-align: right;
+
+    margin-top: 34px;
+    position: relative;
+    top: -168px;
+    right: 895px;
+    /* float: left; */
+}
+.bi{
+    color: orangered;
+}
+.nexttwo1 {
+    /* max-width: 50%; */
+    background-color: tomato;
+    float: left;
+    padding: 15px;
+    height: 22em;
+    width: 300px;
+    margin-top: 214px;
+    position: relative;
+    right: 0px;
+    top: -271px;
+
+
+}
+
+.nexttwo11 {
+    /* max-width: 50%; */
+    background-color: skyblue;
+    float: left;
+    padding: 15px;
+    height: 22em;
+    width: 300px;
+    margin-top: 34px;
+    position: relative;
+    top: -91px;
+
+
+
+}
