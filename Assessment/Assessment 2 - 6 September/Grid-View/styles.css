@@ -1,0 +1,37 @@
+.Parent{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.row1{
+    margin-left: 15%;
+    margin-right: 10%;
+}
+.col1{
+    margin: 5px;
+    float: left;
+    width: 30%;
+    border: 1px solid black;
+}
+.head{ 
+    font-size: 24px;
+    padding-left: 16px;
+    padding-top: 10px;
+   
+}
+img{
+    max-height: 100%;
+   max-width: 100%;
+   padding-bottom: 25px;
+}
+p{
+    padding-left: 16px;
+    padding-right: 2px;
+}
+#btn{
+    background-color: rgb(21, 160, 21);
+    border: none;
+    padding: 10px;
+    border-radius: 5%;
+    color: white;
+    margin-left: 140px;
+    margin-bottom: 30px;
+}
