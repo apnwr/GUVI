@@ -1,0 +1,80 @@
+.Parent{
+    font-family: Verdana,
+    Geneva,
+    Tahoma,
+    sans-serif;
+}
+.navbar{
+    margin-top: 20px;
+     margin-left: 20%;
+     margin-right: 20%;
+
+}
+#hd1{
+    color: grey;
+    font-size: 18px;
+    
+}
+.btn{
+    margin-left: 50%;
+}
+.btn1{
+    color: rgb(19, 127, 214);
+    border-color: white;
+    
+}
+.btn1:hover{
+    background-color: rgb(19, 127, 214);
+    color: white;
+}
+.head{
+   
+    margin-top: 55px;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    background-color: #e0ece4;
+}
+#hd2{
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+#signup{
+background-color: green;
+color: white;
+padding: 10px;
+border-radius: 8%;
+border: none;
+}
+#launch{
+background-color: rgb(43, 43, 245);
+color: white;
+padding: 10px;
+border-radius: 8%;
+border: none;
+}
+.row1{
+    padding-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.col1{
+    
+    float: left;
+    width: 50%;
+    
+}
+hr{
+    height: 1px;
+    background-color: rgba(211, 209, 209, 0.445);
+    
+
+}
+#last{
+    color: rgb(43, 43, 245);
+}
+.last{
+    color: grey;
+}
