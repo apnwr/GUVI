@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <script>
+            var upper = document.createElement('div');
+            upper.setAttribute('class', 'upper');
+
+            var pic = document.createElement('img');
+            pic.setAttribute("class", "pic");
+            pic.setAttribute('src', 'DP.jpg');
+
+
+            var mid = document.createElement('div');
+            mid.setAttribute('class', 'mid');
+            var head = document.createElement('span');
+            head.setAttribute('class', 'head');
+            head.innerHTML = "Ayush Panwar";
+
+            var low = document.createElement('div');
+            low.setAttribute('class', 'low');
+
+
+            upper.appendChild(pic);
+            upper.appendChild(mid);
+            mid.appendChild(head);
+            upper.appendChild(low);
+            document.body.appendChild(upper);
+
+            var content = document.createElement('div');
+            content.setAttribute('class', 'content');
+
+
+            var ad = document.createElement('p');
+            ad.setAttribute('class', 'ad');
+            ad.innerText = "12G Varun Enclave, Noida 201301 | 9818982881 | ayushb147@gmail.com | www.ayushbrew.com";
+
+            var hrr = document.createElement('hr');
+            content.append(ad, hrr);
+
+            //*********************************LEFT*********************************************
+
+            var left = document.createElement('div');
+            left.setAttribute('class', 'left');
+            var profile = document.createElement('div');
+            profile.setAttribute('class', 'profile');
+            var iclass = document.createElement('i');
+            iclass.setAttribute('class', 'fas fa-user');
+            var spani = document.createElement('span');
+            spani.setAttribute('class', 'cont-head');
+            spani.innerText = 'Profile';
+            var p1 = document.createElement('p');
+            p1.innerHTML =
+                'Innovative optimized solution seeker.Excited to be <br> at the development phase of my new career as a <br> web developer. I am ambitious, adventurous, <br> assidious, animated, and an alliteration Game developer.';
+
+            profile.append(iclass, spani, p1);
+
+
+
+            var skills = document.createElement('div');
+            skills.setAttribute('class', 'skills');
+            var iflask = document.createElement('span');
+            iflask.setAttribute('class', 'fas fa-flask');
+            var spanj = document.createElement('span');
+            spanj.setAttribute('class', 'cont-head');
+            spanj.innerText = 'Skills';
+            var h4_cntr = document.createElement('h4');
+            h4_cntr.setAttribute('class', 'center-head');
+            h4_cntr.innerText = 'Technical Skills';
+            var p2 = document.createElement('p');
+            p2.innerHTML =
+                ' Javascript &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> CSS &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> HTML &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> React &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> Redux &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> Mongo &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> Deployment &nbsp &nbsp &nbsp  <input type="range" class="range-all"> <br>';
+            var h41_cntr = document.createElement('h4');
+            h41_cntr.setAttribute('class', 'center-head');
+            h41_cntr.innerText = 'Additional Skills';
+            var p3 = document.createElement('p');
+            p3.innerHTML =
+                ' Project Management &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> Recruitment &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> Bussiness Development &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br> Editing &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br>  Fund Raising &nbsp &nbsp &nbsp <input type="range" class="range-all"> <br>';
+
+            var brl = document.createElement('br');
+            var workex = document.createElement('div');
+            workex.setAttribute('class', 'WorkEx');
+            var brl1 = document.createElement('br');
+            var icase = document.createElement('i');
+            icase.setAttribute('class', 'fa fa-briefcase');
+            var spanwork = document.createElement('span');
+            spanwork.setAttribute('class', 'cont-head');
+            spanwork.innerText = 'Work Experience';
+            var brw = document.createElement('br');
+            var h4_workhd = document.createElement('h4');
+            h4_workhd.setAttribute('class', 'worke-head');
+            h4_workhd.innerHTML = 'Game Developer &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp';
+            var spandt = document.createElement('span');
+            spandt.innerText = '03/2020 - Present';
+            var brw1 = document.createElement('br');
+            var pp = document.createElement('span');
+            pp.innerText = 'Ingenuity Gaming,Noida';
+            var p4 = document.createElement('p');
+            p4.innerHTML =
+                '<ul><li> Develop and execute all phases of Game Development. </li><li> Designing the game as according to the client requirements while suggesting for <br> latest technologies. </li> <li> Test the game through all cycles on different environments for better scalibility and reach.  </li>  <li>  Providing the maintenance to the game after release and chnges as according to the changing time. </li> </ul>';
+            workex.append(icase, spanwork, brl1, brw, h4_workhd, spandt, brw1, pp, p4)
+
+            skills.append(iflask, spanj, h4_cntr, p2, h41_cntr, p3);
+            left.append(profile, skills, brl, workex);
+
+
+
+            //*********************************RIGHT*********************************************
+
+            var right1 = document.createElement('div');
+            right1.setAttribute('class', 'right');
+
+            var edu = document.createElement('div');
+            edu.setAttribute('class', 'Edu');
+            var igrad = document.createElement('i');
+            igrad.setAttribute('class', 'fas fa-graduation-cap');
+            var span_edu = document.createElement('span');
+            span_edu.setAttribute('class', 'cont-head');
+            span_edu.innerText = "Education";
+            var brl2 = document.createElement('br');
+            var bre = document.createElement('br');
+            var h4_edu = document.createElement('h4');
+            h4_edu.setAttribute('class', 'worke-head');
+            h4_edu.innerHTML = 'Bachelor of Technology &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp';
+            var spantedu = document.createElement('span');
+            spantedu.innerText = '04/2013 - 04/2017';
+            var pp1 = document.createElement('span');
+            pp1.innerText = 'N.I.E.T,Noida';
+            var bre1 = document.createElement('br');
+            var ulist = document.createElement('ul');
+            ulist.innerHTML =
+                '<li> Lorem ipsum dolor sit amet, diam pellentesque libero massa. Libero lacinia ut tristique sed, non consectetuer dolor adipisicing nulla, proin vestibulum pellentesque nisl feugiat magna pellentesque. Sed ut nullam metus proin lectus porta, luctus tempor scelerisque  venenatis nunc nulla, nonummy ullamcorper neque tellus in et turpis. Eum sollicitudin conubia nunc. Tellus etiam vestibulum sed netus aliquam, tempor in elementum faucibus, id vehicula id et, porttitor cum convallis vitae dignissim cursus. Maecenas arcu metus, id id massa nibh turpis.  </li>'
+            var bre2 = document.createElement('br');
+            var h4_xii = document.createElement('h4');
+            h4_xii.setAttribute('class', 'worke-head');
+            h4_xii.innerHTML = 'XII &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp';
+            var span_edu11 = document.createElement('span');
+            span_edu11.innerHTML = '04/2011 - 04/2012';
+            var bre21 = document.createElement('br');
+            var pp2 = document.createElement('span');
+            pp2.innerText = 'D.M.A, Rampur';
+            var ulist_1 = document.createElement('ul');
+            ulist_1.innerHTML =
+                '<li> Lorem ipsum dolor sit amet, diam pellentesque libero massa. Libero lacinia ut tristique sed, non consectetuer dolor adipisicing nulla, proin vestibulum pellentesque nisl feugiat magna  pellentesque. Sed ut nullam metus proin lectus porta, luctus tempor scelerisque venenatis nunc nulla, nonummy ullamcorper neque tellus in et turpis. Eum sollicitudin conubia nunc. Tellus etiam vestibulum sed netus aliquam, tempor in elementum faucibus, id vehicula id et, porttitor cum convallis vitae dignissim cursus. Maecenas arcu metus, id id massa nibh turpis. </li>';
+            var h4_x = document.createElement('h4');
+            h4_x.setAttribute('class', 'worke-head');
+            h4_x.innerHTML = 'X &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp';
+            var span_edu1 = document.createElement('span');
+            span_edu1.innerHTML = '04/2009 - 04/2010';
+            var bre3 = document.createElement('br');
+            var pp3 = document.createElement('span');
+            pp3.innerText = 'G.N.A.V, Kurukshetra';
+            var ulist1 = document.createElement('ul');
+            ulist1.innerHTML =
+                '<li> Lorem ipsum dolor sit amet, diam pellentesque libero massa. Libero lacinia ut tristique sed, non consectetuer dolor adipisicing nulla, proin vestibulum pellentesque nisl feugiat magna pellentesque. Sed ut nullam metus proin lectus porta, luctus tempor scelerisque venenatis nunc nulla, nonummy ullamcorper neque tellus in et turpis. Eum sollicitudin conubia nunc. Tellus etiam vestibulum sed netus aliquam, tempor in elementum faucibus, id vehicula id et, porttitor cum convallis vitae dignissim cursus. Maecenas arcu metus, id id massa nibh turpis. </li>';
+
+            var vrtcl_line = document.createElement('div');
+            vrtcl_line.setAttribute('id', 'vertLine');
+
+            edu.append(igrad, span_edu, brl2, bre, h4_edu, spantedu, bre1, pp1, ulist, bre2, h4_xii, span_edu11, bre21,
+                pp2,
+                ulist_1, h4_x,
+                span_edu1, bre3, pp3, ulist1);
+            right1.appendChild(edu);
+            content.appendChild(left);
+            content.appendChild(right1);
+
+            content.appendChild(vrtcl_line);
+            document.body.appendChild(content);
+        </script>
+        <script src="https://kit.fontawesome.com/36d5e732b8.js" crossorigin="anonymous"></script>
+    </body>
+
+</html>
