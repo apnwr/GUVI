@@ -113,7 +113,7 @@ weather_dtl3.setAttribute('id', 'weather_dtl3');
 weather_dtl3.style.backgroundColor = 'grey';
 weather_dtl3.style.color = 'white';
 
-var weathr = 'http://api.openweathermap.org/data/2.5/weather?q=';
+var weathr = 'https://api.openweathermap.org/data/2.5/weather?q=';
 var key_weath = '&appid=ef0f6a65ef120a5615bf7d721426e632';
     
 
@@ -143,7 +143,7 @@ fetch('https://restcountries.eu/rest/v2/all')
         return data3.json();
     })
     .then((data4) => {
-        var iconurl = "http://openweathermap.org/img/wn/" + data4.weather[0].icon + "@2x.png";
+        var iconurl = "https://openweathermap.org/img/wn/" + data4.weather[0].icon + "@2x.png";
         
         console.log(data4);
          document.getElementById('btn1').addEventListener('click', function () {
@@ -185,7 +185,7 @@ fetch('https://restcountries.eu/rest/v2/all')
         return data3.json();
     })
     .then((data4) => {
-        var iconurl1 = "http://openweathermap.org/img/wn/" + data4.weather[0].icon + "@2x.png";
+        var iconurl1 = "https://openweathermap.org/img/wn/" + data4.weather[0].icon + "@2x.png";
 
         
         document.getElementById('btn2').addEventListener('click', function () {
@@ -226,7 +226,7 @@ fetch('https://restcountries.eu/rest/v2/all')
             return data3.json();
         })
         .then((data4) => {
-            var iconurl2 = "http://openweathermap.org/img/wn/" + data4.weather[0].icon + "@2x.png";
+            var iconurl2 = "https://openweathermap.org/img/wn/" + data4.weather[0].icon + "@2x.png";
 
             console.log(data4);
             
