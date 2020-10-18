@@ -1,0 +1,56 @@
+
+/* Image for introductory head */
+#introBG{
+    
+    background-repeat: no-repeat;
+    background-image: url("food.jpg") ;
+    background-blend-mode: darken;
+    background-image: rgba(0, 0, 0, 0.9);
+    padding-bottom: 2%;
+
+}
+
+/* Introbox row */
+.introbox{
+    color: white;
+}
+
+/* Intro - mid column */
+.intromid{
+    text-align: center;
+}
+.card-img-top {
+    border-top-left-radius: 12%;
+     border-top-right-radius: 12%;
+    height: 35vh;
+    object-fit: cover;
+}
+.card-title{
+    text-align: center;
+}
+.card{
+    border-radius: 12%;
+    margin-top: 4%;
+}
+.card:hover{
+   transform: scale(1.05) ;
+   box-shadow: 0px -20px 10px 0px rgba(0, 0, 0, 0.5);
+    color: red;
+}
+#collectionContent{
+    
+    font-family: cursive;
+}
+
+.descCollect{
+    /* justify-content: space-between; */
+    display: flex;
+}
+.link1{
+    /* display: block; */
+    margin-right: 0;
+    
+}
+.cl1{
+   border-radius: 12%;
+}
