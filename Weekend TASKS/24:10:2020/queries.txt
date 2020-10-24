@@ -1,0 +1,37 @@
+CREATE DATABASE my_insta;
+USE my_insta;
+CREATE TABLE profile_status(profile_id INT(11), status VARCHAR(100));
+INSERT INTO profile_status VALUES(112, 'active'), (113, 'inactive'), (114, 'inactive'), (115, 'active'), (116, 'active');
+
+
+CREATE TABLE user_profile(id INT(11), username VARCHAR(100), name VARCHAR(100));
+INSERT INTO user_profile VALUES (112, 'thevaliant_ayuu', 'Ayush Panwar'), (113, 'meenz.nimo', 'Meenakshi Nimoria'), (114, 'piyu', 'Piyush Panwar'), (115, 'dhruv_officil', 'Dhruv Kumar'), (116, 'tanuj_official', 'Tanuj Kumar');
+
+CREATE TABLE friends(id INT(11), count INT(100));
+INSERT INTO friends VALUES(113, 20), (114, 12), (112, 40), (115,80), (116,72);
+
+CREATE TABLE comments (id INT(11), photoId INT(11), content VARCHAR(150));
+INSERT INTO comments VALUES(115, 12, 'superb pic'), (116, 13, 'awesome'), (114, 12, 'looking fantabulous'), (112, 12, 'strong one'), (113, 12, 'missing you dumbo');
+
+CREATE TABLE likes (picId INT(11), likes_count INT(100));
+INSERT INTO likes VALUES (12, 56), (13, 60), (14, 33), (15, 22), (16, 19);
+
+CREATE TABLE user_login_details( id INT(11), email_ad VARCHAR(100), ph_no INT(15));
+INSERT INTO user_login_details VALUES( 112, 'ayushbb@gmail.com', 981898288), ( 113, 'mnimoriab@gmail.com', 801079290), ( 114, 'piyushpp3@gmail.com', 956016682), ( 115, 'dhruv11@gmail.com', 981882888), ( 116, 'tanujme@gmail.com', 818198288);
+
+CREATE TABLE posts( id INT(11), post_id INT(15), post_text VARCHAR(100));
+INSERT INTO posts VALUES( 112, 10, 'nature'), (113, 11, 'gym'), (114, 15, 'Travel diaries'), (114, 19, 'Bro-code'), (115, 21, 'Shimla'), (116, 33, 'Front-end-skills');
+
+SELECT * FROM friends WHERE id = 112;
+
+SELECT * FROM posts WHERE id = 114;
+
+SELECT * FROM  user_login_details WHERE email_ad LIKE '%gmail%';
+
+SELECT * FROM COMMENTS WHERE photoId = 12 AND id = 112 LIMIT 1;
+
+
+//altering the table id as given error on different column name
+ALTER TABLE profile_status RENAME COLUMN profile_id TO id;
+
+SELECT profile_status.id, status, username, name, email_ad, ph_no FROM profile_status INNER JOIN user_profile on profile_status.id = user_profile.id INNER JOIN user_login_details on profile_status.id = user_login_details.id;
