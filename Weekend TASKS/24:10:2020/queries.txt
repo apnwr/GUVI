@@ -22,16 +22,36 @@ INSERT INTO user_login_details VALUES( 112, 'ayushbb@gmail.com', 981898288), ( 1
 CREATE TABLE posts( id INT(11), post_id INT(15), post_text VARCHAR(100));
 INSERT INTO posts VALUES( 112, 10, 'nature'), (113, 11, 'gym'), (114, 15, 'Travel diaries'), (114, 19, 'Bro-code'), (115, 21, 'Shimla'), (116, 33, 'Front-end-skills');
 
+
+
+//Query 1 : In friends table, list the data which are matched with the user profile id
 SELECT * FROM friends WHERE id = 112;
+
+
+
+//Query 2 : Display all the posts of user who is having user id 114
 
 SELECT * FROM posts WHERE id = 114;
 
+
+
+//Query 3 : Write a query with matching the words or character with %gmail%
+
 SELECT * FROM  user_login_details WHERE email_ad LIKE '%gmail%';
+
+
+
+//Query 4 : Limit the display data from the table comments for id 12 which belongs to the user 112
 
 SELECT * FROM COMMENTS WHERE photoId = 12 AND id = 112 LIMIT 1;
 
 
 //altering the table id as given error on different column name
 ALTER TABLE profile_status RENAME COLUMN profile_id TO id;
+
+
+
+
+// Query 5 : Combine profile_status, user_profile & user_login details & display matching records
 
 SELECT profile_status.id, status, username, name, email_ad, ph_no FROM profile_status INNER JOIN user_profile on profile_status.id = user_profile.id INNER JOIN user_login_details on profile_status.id = user_login_details.id;
