@@ -1,0 +1,69 @@
+CREATE DATABASE Guvi;
+USE Guvi;
+
+****************************CREATING TABLES******************************
+
+CREATE TABLE users(id INT(11), username VARCHAR(100));
+INSERT INTO users VALUES(1, 'ayushb147'), (2, 'meenakshi221'), (3, 'piyushpp4'), (4, 'raj121'), (5, 'dhruvoff111');
+
+CREATE TABLE codekata(id INT(11), kata_id INT(11), qstnr_name VARCHAR(100), qstns INT(11), solved INT(11));
+INSERT INTO codekata VALUES(1, 11, 'Numbers', 25, 12), (2, 11, 'Numbers', 25, 18), (1, 12, 'Arrays', 30, 10), (3, 13, 'Microsoft', 20, 5), (1, 13, 'Microsoft', 20, 11);
+
+CREATE TABLE attendance(id INT(11), percentage INT(11), total INT(11), present INT(11));
+INSERT INTO attendance VALUES(1, 80, 10, 8), (2, 70, 10, 7), (3, 60, 10, 6), (4, 40, 10, 4), (5, 90, 10, 9);
+
+CREATE TABLE topics(t_id INT(11), c_id INT(11), t_name VARCHAR(100));
+INSERT INTO topics VALUES(101, 99, 'Callback Function'), (102, 77, 'HTML'), (111, 77, 'CSS'), (131, 99, 'Promise'), (119, 77, 'Bootstrap');
+
+CREATE TABLE tasks(t_id INT(11), c_id INT(11), tsk_id INT(11), task_name VARCHAR(100));
+INSERT INTO tasks VALUES(101, 99, 901, 'Countdown Timer'), (102, 77, 911, 'Country directory'), (111, 77, 913, 'Resume building'), (119, 77, 932, 'Zomato Clone'), (131, 99, 944, 'Rest Countries'); 
+
+CREATE TABLE company_drives(drive_id INT(11), company_name VARCHAR(100), id INT(11));
+INSERT INTO company_drives VALUES(505, 'Logics', 1), (606, 'Microsoft', 1), (707, 'Birla-soft', 2), (808, 'Paypal', 3), (909, 'Ingenuity Gaming', 3);
+
+CREATE TABLE mentors(mtr_id INT(11), mentor_name VARCHAR(100), students_assigned INT(50));
+INSERT INTO mentors VALUES(001, 'PUGAZH', 22), (002, 'ASHWINI', 20), (003, 'ASHOK', 18), (004, 'BHANU', 19), (005, 'VENKAT', 31);
+
+CREATE TABLE students_activated_courses(id INT(11), crs_id INT(11));
+INSERT INTO students_activated_courses VALUES(1, 99), (2, 77), (3, 88), (4, 88), (5, 99);
+
+CREATE TABLE courses(crs_id INT(11), crs_name VARCHAR(100));
+INSERT INTO courses VALUES(77, 'HTML-CSS-BOOTSTRAP'), (99, 'FULL-STACK'), (33, 'JAVASCRIPT'), (44, 'PYTHON'), (55, 'ARTIFICIAL INTELLIGENCE');
+
+
+
+
+
+************GET NUMBER PROBLEMS SOLVED IN codekata BY COMBINING THE users*************************************************************
+
+SELECT codekata.id, codekata.qstnr_name, codekata.solved, users.username FROM codekata INNER JOIN users ON codekata.id = users.id WHERE codekata.qstnr_name = 'Numbers';
+
+
+
+
+************DISPLAY THE NUMBER OF COMPANY DRIVES ATTENDED BY A USER *******************************************************************
+
+SELECT COUNT(company_drives.id) FROM company_drives INNER JOIN users ON company_drives.id = users.id WHERE company_drives.id = 1 GROUP BY company_drives.id ; 
+
+
+
+
+*****COMBINE AND DISPLAY students_activated_courses & courses FOR A SPECIFIC USER GROPING THEM BASED ON THE COURSE*********************
+
+SELECT students_activated_courses.id, students_activated_courses.crs_id, crs_name, username FROM students_activated_courses INNER JOIN courses ON students_activated_courses.crs_id = courses.crs_id INNER JOIN users ON students_activated_courses.id = users.id;
+
+
+
+
+****************************LIST ALL THE MENTORS***************************************************************************************
+
+SELECT mentor_name FROM mentors;
+
+
+
+
+
+***************************LIST NUMBER OF STUDENTS ASSIGNED FOR A MENTOR *************************************************************
+
+SELECT mentor_name, students_assigned FROM mentors;
+
