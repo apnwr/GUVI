@@ -1,0 +1,17 @@
+{
+  "name": "node7nov",
+  "version": "1.0.0",
+  "description": "filecreation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fileCreation"
+  ],
+  "author": "ayush",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

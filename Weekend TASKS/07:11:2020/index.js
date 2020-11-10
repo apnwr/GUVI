@@ -8,14 +8,15 @@ const app = express();
 const port = 3000;
 const dir = '/Users/ayushpanwar/Desktop/';
 
-
+// listening to the port : 3000
 app.listen(port, () => console.log("Application is running successfully on port 3000"));
 
+// sending response to home route
 app.get('/home', function (req, res) {
     res.send("Welcome to my file system");
 });
 
-
+// reading directories and files present on desktop and granting icon accordingly
 app.get('/list', function (req, res) {
     fs.readdir(dir, 'utf-8', (err, files) => {
         if (err) throw err;
@@ -42,5 +43,5 @@ app.get('/list', function (req, res) {
     })
 
 })
-
+// image has been used with static to remove the issue of corrupted or binary data
 app.use("/Icons", express.static(path.join(__dirname, "Icons")));
