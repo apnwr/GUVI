@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
+        <script>
+           
+
+            document.body.style.backgroundImage = 'url(qzh.png)';
+            var contain1 = document.createElement('div');
+            contain1.setAttribute('class', 'container');
+
+            var rowEnd = document.createElement('div');
+            rowEnd.setAttribute('class', 'row');
+            var colEnd = document.createElement('div');
+            colEnd.setAttribute('class', 'col');
+
+            var brk1 = document.createElement('br');
+
+            var frmGrp = document.createElement('div');
+            frmGrp.setAttribute('class', 'form-group ');
+            var lbl = document.createElement('label');
+            lbl.setAttribute('for', 'user');
+            lbl.style.color = 'white';
+            lbl.innerHTML = 'Username : ';
+
+            var inp = document.createElement('input');
+            inp.setAttribute('class', 'form-control');
+            inp.setAttribute('id', 'user');
+            inp.setAttribute('name', 'user');
+            inp.setAttribute('type', 'text');
+            inp.setAttribute('placeholder', 'John');
+
+            var brk = document.createElement('br');
+
+            var btnfrm = document.createElement('div');
+            btnfrm.setAttribute('class', 'btn btn-info d-flex justify-content-center');
+            btnfrm.setAttribute('type', 'submit');
+            btnfrm.setAttribute('id', 'btnfrm');
+            btnfrm.innerHTML = 'SAVE';
+            btnfrm.setAttribute('onclick', 'saveUser()');
+
+            var brk2 = document.createElement('br');
+
+            var btnfrm1 = document.createElement('div');
+            btnfrm1.setAttribute('class', 'btn btn-secondary d-flex justify-content-center');
+            // btnfrm.setAttribute('type', 'submit');
+            btnfrm1.setAttribute('id', 'btnfrm1');
+            btnfrm1.innerHTML = 'PLAY AGAIN';
+            btnfrm1.setAttribute('onclick', 'gm_page()');
+
+            var brk3 = document.createElement('br');
+
+            var btnfrm2 = document.createElement('div');
+            btnfrm2.setAttribute('class', 'btn btn-secondary d-flex justify-content-center');
+            // btnfrm.setAttribute('type', 'submit');
+            btnfrm2.setAttribute('id', 'btnfrm2');
+            btnfrm2.innerHTML = 'HOME';
+            btnfrm2.setAttribute('onclick', 'hm_page()');
+
+            frmGrp.append(lbl, inp, brk, btnfrm, brk2, btnfrm1, brk3, btnfrm2);
+            colEnd.append(brk1, frmGrp);
+            rowEnd.appendChild(colEnd);
+            contain1.appendChild(rowEnd);
+            document.body.appendChild(contain1);
+
+            function saveUser(){
+                 var scr = JSON.parse(localStorage.getItem('Score'));
+                 var max = 0 ;
+                 for(let j = 0 ; j < scr.length ; j++){
+                     if(scr[j] > max){
+                         max = scr[j];
+                     }
+                 }
+                 var userLocal = [{
+                     name : document.getElementById('user').value,
+                     score : scr,
+                     maxScore : max
+                 }]
+                 localStorage.setItem('uselog', JSON.stringify(userLocal));
+                // localStorage.setItem("user", document.getElementById('user').value);
+            }
+
+            function hm_page() {
+            window.location.href = "home.html";
+            }
+
+            function gm_page(){
+                window.location.href = "game.html";
+            }
+
+        </script>
+
+    </body>
+
+</html>
