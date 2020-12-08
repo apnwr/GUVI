@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://kit.fontawesome.com/36d5e732b8.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            
+    </head>
+    <style>
+        body {
+            background-image: linear-gradient(180deg,grey,  white, grey);
+        }
+        #head{
+            background-image: linear-gradient(180deg, grey, white);
+            border-style: double;
+        }
+        #name,
+        #h2t {
+            color: blueviolet;
+        }
+        .list-horizontal li, li {
+        display:inline-block;
+        padding: 2%;
+        list-style-type: none;
+        }
+        .list-horizontal li:before {
+        content: '\00a0\2022\00a0\00a0';
+        color:#999;
+        color:rgba(0,0,0,0.5);
+        font-size:11px;
+        }
+        .list-horizontal li:first-child:before {
+        content: '';
+        }
+        
+    </style>
+
+    <body>
+        <div id="root">
+
+        </div>
+        <script type="text/babel">
+
+            const rootElement = document.getElementById("root");
+    
+    const Htag = (txt) => <h1 id='name'>{txt}</h1>
+
+    const H2tag = (txt) => <h2 id='h2t' className=" ml-3">{txt}</h2>
+    const H4tag = (txt) => <h4 id='h4t' className=" ml-3">{txt}</h4>
+
+    const Spntag = (line) => <span>{line}</span>
+
+    const Hlist = () => 
+    <ul className="list-horizontal">
+        <li><img src="html5.png"  /> HTML5</li>
+        <li><img src="css.png" />CSS3</li>
+        <li><img src="bts.png" width="24" height="24" />Bootstrap4</li>
+        <li><img src="javascript.png" />Javascript</li>
+        <li><img src="mongodb.png"  width="24" height="24"  />Mongodb</li>
+        <li><img src="ex.png" width="24" height="24" />ExpressJS</li>
+        <li><img src="nodejs.png" />NodeJS</li>
+        <li ><img src="react.png" />ReactJS</li>
+    </ul>
+
+    const List = (ln) => <ul><li>{ln.children}</li></ul>
+    
+    const Hr = () => <hr />
+    
+    const GridH = (content) => <div className="container mt-5" id="head">
+        <div className="row">
+            <div className="col-6 offset-3 text-center">{content.children}</div>
+            <div className="col-3 text-center"><strong>Contact</strong><ul>
+                    <li><a href="https://www.instagram.com/thevaliant_ayuu/" className="mr-4"><img
+                                src="instagram.png" /></a>
+            </li><li>  <a href="https://www.linkedin.com/in/ayush-panwar-a347021a1/" className="mr-4 mb-2"><img
+                       src="linkedin.png" /></a></li>
+                       <li> <a
+                   href="https://github.com/apnwr" ><img src="github.png" /></a></li></ul></div>
+        </div>
+    </div>
+
+
+    const Grid = (content) => <div className="container mt-5" >
+        <div className="row">
+            <div className="col-6 offset-3 text-center">{content.children}</div>
+            </div>
+            </div>
+
+    const Grid2 = (content) => <div className="container mt-3">
+        <div className="row">
+            <div className="col-6 offset-2 ">{content.children}</div>
+        </div>
+    </div>
+
+    const Header = () => <div>
+     < GridH>
+     {Htag("Ayush Panwar")} {Spntag("Innovator, Problem Solver & Quick Learner")}
+     </GridH>
+     <Hr />
+     </div>
+
+     const Content1 = () => <div>
+      {H2tag("Education")}
+       <Grid2>
+        <List>{"Bachelor Of Technology - NIET - (2013-17) - 62.5%"}
+        </List>
+        <List>{"XII - DMA, Rampur - (2011-12) - 67.4%"}
+        </List>
+        <List>{"X - GNAV, Kurukshetra - (2009-10) - CGPA 9.0"}
+        </List>
+        </Grid2>
+     </div>
+
+     const Content2 = () => <div>
+         {H2tag("Experience")}
+         {H4tag("INGENUITY GAMING, Noida - Game Developer")}
+         <Grid2>
+             <List>{"March 2020 - Present"}
+             </List>
+             <List>{"Design & Development of features of games while taking care of specific requirement of client.Providing support and maintenance."}
+             </List>
+         </Grid2>
+         {H4tag("MOUNT TALENT CONSULTING, Noida - Business Development Executive")}
+         <Grid2>
+             <List>{"Feb 2017 - Aug 2017"}
+             </List>
+             <List>{"Learnt about client handling , strategies for empanelment with other companies & also got the opportunity to work on real time project on Middle East."}
+             </List>
+         </Grid2>
+     </div>
+      
+      
+     
+     
+     
+
+     const Content3 = () => <div>{H2tag("Skills")}<Hlist />
+     </div>
+
+
+     const Content4 = () => <div>
+         {H2tag("Awards & Certifications")}
+         <Grid2>
+             <List>{"Certification in UDEMY COMPLETE WEB DEVELOPMENT BOOTCAMP."}
+             </List>
+             <List>{"Certified in INTERPERSONAL SKILLS by Barclays (Conducted by GTT & NASSCOM)."}
+             </List>
+             <List>{"Ist position in STATE SCIENCE FAIR organised by KURUKSHETRA PANORAMA & SCIENCE CENTRE."}
+             </List>
+             <List>{"IInd position in NATIONAL SCIENCE MODEL COMPETITION while representing North Zone during DR. HOMI JAHANGIR BHABHA SCIENCE FEST."}
+             </List>
+         </Grid2>
+     </div>
+
+     const Content5 = () => <div>
+         {H2tag("Languages")}
+         <Grid2>
+             <List>{"English."}
+             </List>
+             <List>{"Hindi."}
+             </List>
+         </Grid2>
+     </div>
+         
+     const Content = () => {
+     return  (
+                <div>
+                <Content1 / >
+                <hr / > 
+                <Content2 />
+                    <hr />
+                <Content3 />
+                <hr />
+                <Content4 />
+                <hr />
+                <Content5 />
+                <hr />
+                </div>
+     )
+     }
+
+    const App = () => {
+        return (
+            <div id="resume">
+            <Header />
+            <Content />
+            </div>         
+        ) 
+    }
+    
+    ReactDOM.render(< App />, rootElement);
+    
+    </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+        </script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+        </script>
+    </body>
+
+</html>
