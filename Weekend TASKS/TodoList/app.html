@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  body{
+    background-color: #736e7a;
+}
+#root{
+    background-color: #4670a7;
+    width: 600px;
+    height: 500px;
+    margin: 40px auto;
+    border-radius: 5%;
+    border-style: ridge;
+    border-width: 20px;
+    
+}
+.todo{
+    text-align: center;
+    padding: 20px;
+}
+input{
+    background-color: skyblue;
+    border-radius: 10px;
+    width: 60%;
+    font-size: 18px;
+    border: none;
+    padding: 2px;
+    margin: 3px;
+}
+h1{
+    font-family: cursive;
+    color: yellow;
+}
+button{
+    background-color: rgb(0, 0, 0);
+    border: none;
+    font-size: 15px;
+    border-radius: 2px;
+    color: white;
+}
+</style>
+<body>
+    <div id="root">AYUSH</div>
+
+    <script type="text/babel">
+
+    const rootElement = document.getElementById("root");
+
+    const TodoApp = () => {
+          const [todos, setodos] = React.useState(["Initial Todo"]);
+          const [text, settext] = React.useState("");
+
+          const add = () => {
+              
+              setodos(todos.concat(text))
+          }
+
+          const remove = (index) => {
+              setodos(todos.filter((val,idx) => idx !== index))
+          }
+          // const lineth = (index) => {
+          //     setodos(todos.map((val,idx) => idx === index ? style={{ textDecoration: 'line-through' }} : style={ textDecoration: 'none' }))
+          // }
+
+        //   const handleEdit = (index) => {
+        //          let newVal =() =>{
+
+        //          }
+        //          setodos(todos.map((val,idx) => idx === index ? newVal : val )) 
+        //   }
+
+
+
+          const handleChange = (event) => settext(event.target.value);
+
+          const handleClick = (e) => {
+              return (e.target.style = { textDecoration: 'line-through' })
+              }
+              
+          
+
+          return (
+              <div className="todo">
+              <h1>To-do List</h1> <br/>
+                <input type="text" value={text} onChange={handleChange}/ >
+                <button onClick={add}>Add New Todo</button>
+                 {
+                     todos.map((text, index) => {
+                      return   <div key={index}>
+                            <button className="btn" onClick={() => handleClick} ><i className="fa fa-check-circle" /></button>
+                            <input  type="text" value={text} onChange={handleChange} />
+                            <button className="btn" onClick={()=>remove(index)}><i className="fa fa-trash"/></button>      
+                            <hr/>                     
+                            </div>
+                            
+                     } )
+
+                     
+                 }
+                </div>
+
+          )
+      }
+
+      ReactDOM.render(<TodoApp />, rootElement); 
+    </script>
+</body>
+</html>
